@@ -15,42 +15,36 @@ class Gif extends StatelessWidget {
             width: 200,
             height: 200,
             padding: EdgeInsets.all(10),
-            child: Image.network(
-                'https://www.3wyp.com/ad/ad001/a/a503-239x200-logo.gif'),
+            child: Image.asset('images/a503-239x200-logo.gif'),
           ),
           Container(
             width: 200,
             height: 200,
-            child:
-                Image.network('https://www.3wyp.com/ad/ad001/a/a298-logo.gif'),
-          ),
-          Container(
-            width: 200,
-            height: 200,
-            padding: EdgeInsets.all(10),
-            child: Image.network(
-                'https://www.3wyp.com/ad/ad001/a/a578-239x200-logo.gif'),
+            child: Image.asset('images/a298-logo.gif'),
           ),
           Container(
             width: 200,
             height: 200,
             padding: EdgeInsets.all(10),
-            child: Image.network(
-                'https://www.3wyp.com/ad/ad001/a/a361-239x200-logo.gif'),
+            child: Image.asset('images/a578-239x200-logo.gif'),
           ),
           Container(
             width: 200,
             height: 200,
             padding: EdgeInsets.all(10),
-            child: Image.network(
-                'https://www.3wyp.com/ad/ad001/a/a565-239x200-logo.gif'),
+            child: Image.asset('images/a361-239x200-logo.gif'),
           ),
           Container(
             width: 200,
             height: 200,
             padding: EdgeInsets.all(10),
-            child: Image.network(
-                'https://www.3wyp.com/ad/ad001/a/a317-239x200-logo.gif'),
+            child: Image.asset('images/a565-239x200-logo.gif'),
+          ),
+          Container(
+            width: 200,
+            height: 200,
+            padding: EdgeInsets.all(10),
+            child: Image.asset('images/a317-239x200-logo.gif'),
           ),
         ],
       ),
