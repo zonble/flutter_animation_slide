@@ -82,7 +82,7 @@ class _AllAnimationState extends State<AllAnimation>
   @override
   void initState() {
     _controller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 200));
+        AnimationController(vsync: this, duration: Duration(milliseconds: 500), value: 0.5);
     super.initState();
   }
 

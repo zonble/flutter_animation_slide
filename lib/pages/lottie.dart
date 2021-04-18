@@ -27,29 +27,29 @@ class LottiePage extends StatelessWidget {
         )
       ]),
       Spacer(),
-      Wrap(children: [
-        Container(
-          height: 200,
-          child: Lottie.network(
-              'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/A.json'),
-        ),
-        Container(
-          height: 200,
-          child: Lottie.network(
-              'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/B.json'),
-        ),
-        Container(
-          height: 200,
-          child: Lottie.network(
-              'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/C.json'),
-        ),
-        Container(
-          height: 200,
-          child: Lottie.network(
-              'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/D.json'),
-        )
-      ]),
-      Spacer(),
+      // Wrap(children: [
+      //   Container(
+      //     height: 200,
+      //     child: Lottie.network(
+      //         'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/A.json'),
+      //   ),
+      //   Container(
+      //     height: 200,
+      //     child: Lottie.network(
+      //         'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/B.json'),
+      //   ),
+      //   Container(
+      //     height: 200,
+      //     child: Lottie.network(
+      //         'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/C.json'),
+      //   ),
+      //   Container(
+      //     height: 200,
+      //     child: Lottie.network(
+      //         'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/D.json'),
+      //   )
+      // ]),
+      // Spacer(),
       Text('https://github.com/xvrh/lottie-flutter/tree/master/example/assets'),
       SizedBox(height: 10),
     ]));

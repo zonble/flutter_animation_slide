@@ -3,6 +3,9 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 import 'pages/about.dart';
+import 'pages/animated_widget.dart';
+import 'pages/animated_widget_code.dart';
+import 'pages/animated_widgets.dart';
 import 'pages/animation_all.dart';
 import 'pages/animation_code.dart';
 import 'pages/animation_opacity.dart';
@@ -11,11 +14,14 @@ import 'pages/animation_scale.dart';
 import 'pages/code.dart';
 import 'pages/code_less.dart';
 import 'pages/code_or_not.dart';
-import 'pages/conecpt.dart';
+import 'pages/concept.dart';
 import 'pages/cover.dart';
+import 'pages/explicit.dart';
 import 'pages/gif.dart';
 import 'pages/lottie.dart';
 import 'pages/rive.dart';
+import 'pages/rotation_transition_code.dart';
+import 'pages/rotation_transition_page.dart';
 import 'pages/svga.dart';
 import 'pages/webp.dart';
 
@@ -111,6 +117,13 @@ class _MyHomePageState extends State<MyHomePage> {
                                 RotateAnimationPage(),
                                 OpacityAnimationPage(),
                                 AllAnimationPage(),
+                                ExplicitPage(),
+                                AnimatedWidgetPage(),
+                                AnimationWidgetCodePage(),
+                                AnimationWidgetCodeInnerPage(),
+                                AnimatedWidgets(),
+                                RotationTransitionPage(),
+                                RotationTransitionCodePage(),
                               ],
                             ),
                             SafeArea(

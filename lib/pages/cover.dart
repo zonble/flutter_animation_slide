@@ -9,10 +9,11 @@ class Cover extends StatelessWidget {
     return SimplePage(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       H1('在 Flutter 中使用動畫'),
+      Spacer(),
+      FlutterLogo(),
+      Spacer(),
       Bullet('Weizhong Yang a.k.a zonble'),
       Bullet('zonble@gmail.com / https://zonble.net'),
-      Spacer(),
-      Spacer(),
     ]));
   }
 }

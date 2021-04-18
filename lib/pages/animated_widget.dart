@@ -5,20 +5,20 @@ import 'package:flutter/material.dart';
 import '../page.dart';
 import '../styles.dart';
 
-class RotateAnimationPage extends StatefulWidget {
+class AnimatedWidgetPage extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => _RotateAnimationPageState();
+  State<StatefulWidget> createState() => _AnimatedWidgetPageState();
 }
 
-class _RotateAnimationPageState extends State<RotateAnimationPage> {
+class _AnimatedWidgetPageState extends State<AnimatedWidgetPage> {
   GlobalKey<_RotateAnimationState> key = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     return SimplePage(
         child: Column(children: [
-      H1('旋轉動畫'),
-      Bullet('只用 Animation Controller 與 Animation Builder'),
+      H1('這次我們改用 Animation Widget'),
+      Bullet('看起來效果差不多，但用的是另外一套 API'),
       SizedBox(height: 20),
       Container(
         height: 360,
@@ -109,21 +109,31 @@ class _RotateAnimationState extends State<RotateAnimation>
   animatedTo75() => _controller.animateTo(0.75, curve: Curves.bounceInOut);
 
   @override
+  Widget build(BuildContext context) => Inner(controller: _controller);
+}
+
+class Inner extends AnimatedWidget {
+  const Inner({
+    Key key,
+    @required AnimationController controller,
+  }) : super(key: key, listenable: controller);
+
+  Animation<double> get _progress => listenable as Animation<double>;
+
+  @override
   Widget build(BuildContext context) {
-    return AnimatedBuilder(
-        animation: _controller,
-        builder: (context, child) => Center(
-            child: Transform.rotate(
-                angle: _controller.value * math.pi * 2, child: child)),
-        child: ClipOval(
-            child: Container(
-          width: 200,
-          height: 200,
-          decoration: BoxDecoration(
-              border: Border.all(color: Colors.grey),
-              borderRadius: BorderRadius.all(Radius.circular(100)),
-              image: DecorationImage(
-                  fit: BoxFit.cover, image: AssetImage('images/cat.jpg'))),
-        )));
+    return Center(
+        child: Transform.rotate(
+            angle: _progress.value * math.pi * 2,
+            child: ClipOval(
+                child: Container(
+              width: 200,
+              height: 200,
+              decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey),
+                  borderRadius: BorderRadius.all(Radius.circular(100)),
+                  image: DecorationImage(
+                      fit: BoxFit.cover, image: AssetImage('images/cat.jpg'))),
+            ))));
   }
 }

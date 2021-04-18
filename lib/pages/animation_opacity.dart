@@ -15,7 +15,7 @@ class _OpacityAnimationPageState extends State<OpacityAnimationPage> {
   Widget build(BuildContext context) {
     return SimplePage(
         child: Column(children: [
-      H1('旋轉動畫'),
+      H1('透明度動畫'),
       Bullet('只用 Animation Controller 與 Animation Builder'),
       SizedBox(height: 20),
       Container(
@@ -79,8 +79,8 @@ class _OpacityAnimationState extends State<OpacityAnimation>
 
   @override
   void initState() {
-    _controller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 200));
+    _controller = AnimationController(
+        vsync: this, duration: Duration(milliseconds: 500), value: 0.5);
     super.initState();
   }
 

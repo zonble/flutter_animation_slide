@@ -1,24 +1,22 @@
-import 'dart:math' as math;
-
 import 'package:flutter/material.dart';
 
 import '../page.dart';
 import '../styles.dart';
 
-class RotateAnimationPage extends StatefulWidget {
+class RotationTransitionPage extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => _RotateAnimationPageState();
+  State<StatefulWidget> createState() => _RotationTransitionPageState();
 }
 
-class _RotateAnimationPageState extends State<RotateAnimationPage> {
+class _RotationTransitionPageState extends State<RotationTransitionPage> {
   GlobalKey<_RotateAnimationState> key = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     return SimplePage(
         child: Column(children: [
-      H1('旋轉動畫'),
-      Bullet('只用 Animation Controller 與 Animation Builder'),
+      H1('這次我們改用 Rotation Transition'),
+      Bullet('看起來效果差不多，但用的是另外一套 API'),
       SizedBox(height: 20),
       Container(
         height: 360,
@@ -110,20 +108,19 @@ class _RotateAnimationState extends State<RotateAnimation>
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedBuilder(
-        animation: _controller,
-        builder: (context, child) => Center(
-            child: Transform.rotate(
-                angle: _controller.value * math.pi * 2, child: child)),
-        child: ClipOval(
-            child: Container(
-          width: 200,
-          height: 200,
-          decoration: BoxDecoration(
-              border: Border.all(color: Colors.grey),
-              borderRadius: BorderRadius.all(Radius.circular(100)),
-              image: DecorationImage(
-                  fit: BoxFit.cover, image: AssetImage('images/cat.jpg'))),
-        )));
+    return Center(
+      child: RotationTransition(
+          turns: _controller,
+          child: ClipOval(
+              child: Container(
+            width: 200,
+            height: 200,
+            decoration: BoxDecoration(
+                border: Border.all(color: Colors.grey),
+                borderRadius: BorderRadius.all(Radius.circular(100)),
+                image: DecorationImage(
+                    fit: BoxFit.cover, image: AssetImage('images/cat.jpg'))),
+          ))),
+    );
   }
 }

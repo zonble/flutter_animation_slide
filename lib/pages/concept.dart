@@ -16,7 +16,7 @@ class Concept extends StatelessWidget {
           Bullet('改變 Align 或 Positioned，可以做出移動動畫', level: 1),
           Bullet('AnimationController 控制動畫中時間與數值的對應'),
           Bullet('在 AnimatedBuilder 中 build 出受到動畫影響的 Widget'),
-          Bullet('（也可以用不斷 setState() 實作，不過方便起見，只講一種實作方式 ）'),
+          Bullet('AnimatedWidget 則像是把 AnimatedBuilder 中的邏輯抽出變成另一個 Widget'),
         ]));
   }
 }
