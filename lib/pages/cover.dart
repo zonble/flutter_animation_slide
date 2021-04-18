@@ -14,6 +14,9 @@ class Cover extends StatelessWidget {
       Spacer(),
       Bullet('Weizhong Yang a.k.a zonble'),
       Bullet('zonble@gmail.com / https://zonble.net'),
+      Bullet('Slide Source Code',
+          link: 'https://github.com/zonble/flutter_animation_slide'),
+      SizedBox(height: 20),
     ]));
   }
 }

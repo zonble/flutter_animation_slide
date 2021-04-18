@@ -14,11 +14,13 @@ import 'pages/animation_scale.dart';
 import 'pages/code.dart';
 import 'pages/code_less.dart';
 import 'pages/code_or_not.dart';
+import 'pages/color_tween.dart';
 import 'pages/concept.dart';
 import 'pages/cover.dart';
 import 'pages/explicit.dart';
 import 'pages/gif.dart';
 import 'pages/lottie.dart';
+import 'pages/recap.dart';
 import 'pages/rive.dart';
 import 'pages/rotation_transition_code.dart';
 import 'pages/rotation_transition_page.dart';
@@ -117,13 +119,15 @@ class _MyHomePageState extends State<MyHomePage> {
                                 RotateAnimationPage(),
                                 OpacityAnimationPage(),
                                 AllAnimationPage(),
-                                ExplicitPage(),
                                 AnimatedWidgetPage(),
                                 AnimationWidgetCodePage(),
                                 AnimationWidgetCodeInnerPage(),
                                 AnimatedWidgets(),
                                 RotationTransitionPage(),
                                 RotationTransitionCodePage(),
+                                TweenAnimationWidgetPage(),
+                                ExplicitPage(),
+                                Recap(),
                               ],
                             ),
                             SafeArea(
