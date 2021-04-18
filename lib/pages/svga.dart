@@ -19,46 +19,36 @@ class SvgaPage extends StatelessWidget {
             height: 160,
             width: 200,
             padding: EdgeInsets.only(right: 20),
-            child: SVGASimpleImage(
-                resUrl:
-                    "https://github.com/yyued/SVGA-Samples/blob/master/angel.svga?raw=true"),
+            child: SVGASimpleImage(assetsName: 'assets/angel.svga'),
           ),
           Container(
             height: 160,
             width: 200,
             padding: EdgeInsets.only(right: 20),
-            child: SVGASimpleImage(
-                resUrl:
-                    "https://github.com/yyued/SVGA-Samples/blob/master/halloween.svga?raw=true"),
+            child: SVGASimpleImage(assetsName: 'assets/halloween.svga'),
           ),
           Container(
             height: 160,
             width: 200,
             padding: EdgeInsets.only(right: 20),
-            child: SVGASimpleImage(
-                resUrl:
-                    "https://github.com/yyued/SVGA-Samples/blob/master/kingset.svga?raw=true"),
+            child: SVGASimpleImage(assetsName: 'assets/kingset.svga'),
           ),
           Container(
             height: 160,
             width: 200,
             padding: EdgeInsets.only(right: 20),
-            child: SVGASimpleImage(
-                resUrl:
-                    "https://github.com/yyued/SVGA-Samples/blob/master/posche.svga?raw=true"),
+            child: SVGASimpleImage(assetsName: 'assets/posche.svga'),
           ),
           Container(
             height: 160,
             width: 200,
             padding: EdgeInsets.only(right: 20),
-            child: SVGASimpleImage(
-                resUrl:
-                    "https://github.com/yyued/SVGA-Samples/blob/master/rose.svga?raw=true"),
+            child: SVGASimpleImage(assetsName: 'assets/rose.svga'),
           ),
         ]),
       ),
       Spacer(),
-      Text('https://github.com/svga/SVGA-Samples 這頁的載入速度有點慢…'),
+      Text('https://github.com/svga/SVGA-Samples'),
       SizedBox(height: 10),
     ]));
   }
