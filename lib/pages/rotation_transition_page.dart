@@ -15,7 +15,7 @@ class _RotationTransitionPageState extends State<RotationTransitionPage> {
   Widget build(BuildContext context) {
     return SimplePage(
         child: Column(children: [
-      H1('這次我們改用 Rotation Transition'),
+      H1('改用 Rotation Transition'),
       Bullet('看起來效果差不多，但用的是另外一套 API'),
       SizedBox(height: 20),
       Container(

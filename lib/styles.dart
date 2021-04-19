@@ -66,7 +66,7 @@ class Bullet extends StatelessWidget {
             children: <Widget>[
               Padding(
                 padding: EdgeInsets.only(left: 12.0 + level * 30, right: 12.0),
-                child: Text('-', style: TextStyle(fontSize: 26)),
+                child: Text('-', style: TextStyle(fontSize: 24)),
               ),
               Flexible(
                 child: link != null ? buildLink() : buildText(),
@@ -84,7 +84,7 @@ class Bullet extends StatelessWidget {
 
   Widget buildText({Color color}) => Text(this.text,
       style: TextStyle(
-          fontSize: 26,
+          fontSize: 24,
           fontFamily: 'Helvetica Neue',
           fontWeight: FontWeight.w300,
           color: color));

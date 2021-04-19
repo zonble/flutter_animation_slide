@@ -41,7 +41,8 @@ class _RivePageState extends State<RivePage> {
     return SimplePage(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       H1('Rive'),
-      Bullet('提供線上編輯工具'),
+      Bullet('提供線上網頁版本的動畫編輯工具'),
+      Bullet('有較多的 API 可以控制動畫行為'),
       Container(
           height: 300,
           width: 300,
@@ -51,7 +52,7 @@ class _RivePageState extends State<RivePage> {
       IconButton(
           icon: Icon(isPlaying ? Icons.pause : Icons.play_arrow),
           onPressed: _togglePlay),
-      Text('https://github.com/rive-app/rive-flutter/tree/master/example'),
+      Text('素材來源 https://github.com/rive-app/rive-flutter/tree/master/example'),
       SizedBox(height: 10),
     ]));
   }
