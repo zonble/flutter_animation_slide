@@ -10,7 +10,7 @@ class AnimationWidgetCodePage extends StatelessWidget {
     return SimplePage(
       child: Column(
         children: [
-          H1('使用 AnimationWidget subclass'),
+          H1('build() 中，我們建立了一個新的 Class，叫做 Inner'),
           Flexible(
             child: DartCodeViewer.light(r'''
 class _RotateAnimationState extends State<RotateAnimation>
@@ -47,7 +47,7 @@ class AnimationWidgetCodeInnerPage extends StatelessWidget {
     return SimplePage(
       child: Column(
         children: [
-          H1('實作 AnimationWidget subclass'),
+          H1('Inner 的實作'),
           Flexible(
             child: DartCodeViewer.light(r'''
 class Inner extends AnimatedWidget {

@@ -17,7 +17,7 @@ class _AnimatedWidgetPageState extends State<AnimatedWidgetPage> {
   Widget build(BuildContext context) {
     return SimplePage(
         child: Column(children: [
-      H1('改用 AnimationWidget'),
+      H1('這次我們改用 Animation Widget'),
       Bullet('看起來效果差不多，但用的是另外一套 API'),
       SizedBox(height: 20),
       Container(

@@ -17,10 +17,10 @@ class _TweenAnimationWidgetPageState extends State<TweenAnimationWidgetPage> {
         child: Column(children: [
       H1('Tween'),
       Bullet('用來描述動畫中比較複雜的數值變化'),
-      Bullet('ColorTween: 描述顏色之間的變化'),
+      Bullet('例如，我們可以用 ColorTween 來描述顏色之間的變化'),
       SizedBox(height: 20),
       Container(
-          height: 300,
+          height: 360,
           child: Row(children: [
             Expanded(
                 flex: 1, child: Center(child: TweenAnimationExample(key: key))),

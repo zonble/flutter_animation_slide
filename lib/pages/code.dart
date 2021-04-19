@@ -8,11 +8,10 @@ class Code extends StatelessWidget {
   Widget build(BuildContext context) {
     return SimplePage(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      H1('用 Flutter SDK 本身的 API'),
-      Bullet('個人歸納以下幾種方式'),
-      Bullet('1. AnimationController + AnimatedBuilder', level: 1),
-      Bullet('2. AnimationController + AnimatedWidget', level: 1),
-      Bullet('3. 其他各種支援動畫的 Widget', level: 1),
+      H1('使用 Flutter SDK 本身的 API 開發動畫'),
+      Bullet('1. AnimationController + AnimatedBuilder'),
+      Bullet('2. AnimationController + AnimatedWidget'),
+      Bullet('3. 其他各種支援動畫的 Widget'),
     ]));
   }
 }

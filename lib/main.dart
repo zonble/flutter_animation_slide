@@ -34,7 +34,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Animations',
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
       home: MyHomePage(title: 'Flutter Animations'),
     );
   }
@@ -82,64 +84,9 @@ class _MyHomePageState extends State<MyHomePage> {
     var scale = () {
       final mediaWidth = MediaQuery.of(context).size.width;
       final mediaHeight = MediaQuery.of(context).size.height;
-      if (mediaHeight / mediaWidth > 640.0 / 800.0) return mediaWidth / 800.0;
-      return mediaHeight / 640.0;
+      if (mediaHeight > mediaWidth) return mediaWidth / 800;
+      return mediaHeight / 640;
     }();
-
-    final pages = PageView(
-      controller: _pageController,
-      children: <Widget>[
-        Cover(),
-        About(),
-        CodeOrNot(),
-        CodeLess(),
-        Gif(),
-        Webp(),
-        LottiePage(),
-        SvgaPage(),
-        RivePage(),
-        Code(),
-        Concept(),
-        ScaleAnimationPage(),
-        AnimationCodeControllerPage(),
-        AnimationCodeBuilderPage(),
-        AnimationCodeControllerMethodsPage(),
-        RotateAnimationPage(),
-        OpacityAnimationPage(),
-        AllAnimationPage(),
-        AnimatedWidgetPage(),
-        AnimationWidgetCodePage(),
-        AnimationWidgetCodeInnerPage(),
-        AnimatedWidgets(),
-        RotationTransitionPage(),
-        RotationTransitionCodePage(),
-        TweenAnimationWidgetPage(),
-        ExplicitPage(),
-        Recap(),
-      ],
-    );
-
-    final stack = Stack(
-      children: <Widget>[
-        pages,
-        Center(
-            child: Align(
-                alignment: Alignment.bottomCenter,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    IconButton(
-                        icon: Icon(Icons.arrow_left, color: Colors.grey),
-                        onPressed: previousPage),
-                    PageNumber(key: _key, page: _page),
-                    IconButton(
-                        icon: Icon(Icons.arrow_right, color: Colors.grey),
-                        onPressed: nextPage),
-                  ],
-                )))
-      ],
-    );
-
     return Scaffold(
         body: Center(
             child: Transform.scale(
@@ -148,13 +95,70 @@ class _MyHomePageState extends State<MyHomePage> {
                     height: 640,
                     width: 800,
                     child: GestureDetector(
-                        onTap: nextPage, child: Expanded(child: stack))))));
+                        onTap: nextPage,
+                        child: Stack(
+                          children: <Widget>[
+                            PageView(
+                              controller: _pageController,
+                              children: <Widget>[
+                                Cover(),
+                                About(),
+                                CodeOrNot(),
+                                CodeLess(),
+                                Gif(),
+                                Webp(),
+                                LottiePage(),
+                                SvgaPage(),
+                                RivePage(),
+                                Code(),
+                                Concept(),
+                                ScaleAnimationPage(),
+                                AnimationCodeControllerPage(),
+                                AnimationCodeBuilderPage(),
+                                AnimationCodeControllerMethodsPage(),
+                                RotateAnimationPage(),
+                                OpacityAnimationPage(),
+                                AllAnimationPage(),
+                                AnimatedWidgetPage(),
+                                AnimationWidgetCodePage(),
+                                AnimationWidgetCodeInnerPage(),
+                                AnimatedWidgets(),
+                                RotationTransitionPage(),
+                                RotationTransitionCodePage(),
+                                TweenAnimationWidgetPage(),
+                                ExplicitPage(),
+                                Recap(),
+                              ],
+                            ),
+                            SafeArea(
+                                child: Center(
+                                    child: Align(
+                                        alignment: Alignment.bottomCenter,
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: <Widget>[
+                                            IconButton(
+                                                icon: Icon(Icons.arrow_left,
+                                                    color: Colors.grey),
+                                                onPressed: previousPage),
+                                            PageNumber(key: _key, page: _page),
+                                            IconButton(
+                                                icon: Icon(Icons.arrow_right,
+                                                    color: Colors.grey),
+                                                onPressed: nextPage),
+                                          ],
+                                        ))))
+                          ],
+                        ))))));
   }
 }
 
 class PageNumber extends StatefulWidget {
-  const PageNumber({Key key, @required int page})
-      : initialPage = page,
+  const PageNumber({
+    Key key,
+    @required int page,
+  })  : initialPage = page,
         super(key: key);
 
   final int initialPage;
@@ -172,7 +176,9 @@ class _PageNumberState extends State<PageNumber> {
     _page = widget.initialPage;
   }
 
-  void setPage(int pageIndex) => setState(() => _page = pageIndex);
+  void setPage(int pageIndex) {
+    setState(() => _page = pageIndex);
+  }
 
   @override
   Widget build(BuildContext context) {
