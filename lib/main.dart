@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-
 import 'pages/about.dart';
 import 'pages/animated_widget.dart';
 import 'pages/animated_widget_code.dart';

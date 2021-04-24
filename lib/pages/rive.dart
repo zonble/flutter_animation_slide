@@ -52,7 +52,7 @@ class _RivePageState extends State<RivePage> {
           icon: Icon(isPlaying ? Icons.pause : Icons.play_arrow),
           onPressed: _togglePlay),
       Text('https://github.com/rive-app/rive-flutter/tree/master/example'),
-      SizedBox(height: 10),
+      SizedBox(height: 4),
     ]));
   }
 }

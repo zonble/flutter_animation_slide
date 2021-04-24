@@ -8,9 +8,9 @@ class CodeOrNot extends StatelessWidget {
   Widget build(BuildContext context) {
     return SimplePage(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      H2('你有三種選擇：'),
-      H1('1. 寫比較少的 Code'),
-      H1('2. 寫比較多的 Code'),
+      H2('製作動畫的選擇：'),
+      H1('1. 播放動畫檔案'),
+      H1('2. 操作 Widget'),
       H1('3. 混合以上兩種方式'),
     ]));
   }

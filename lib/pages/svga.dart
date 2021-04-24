@@ -12,6 +12,7 @@ class SvgaPage extends StatelessWidget {
       H1('SVGA'),
       Bullet('一樣提供 After Effect 的轉換工具'),
       Bullet('流行於對岸直播業界'),
+      Bullet('缺點：不支援 Flutter Web'),
       Spacer(),
       Center(
         child: Wrap(children: [
@@ -48,8 +49,8 @@ class SvgaPage extends StatelessWidget {
         ]),
       ),
       Spacer(),
-      Text('https://github.com/svga/SVGA-Samples'),
-      SizedBox(height: 10),
+      Text('素材來源 https://github.com/svga/SVGA-Samples，在 Flutter Web 看不到本頁效果'),
+      SizedBox(height: 4),
     ]));
   }
 }

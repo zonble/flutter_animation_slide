@@ -16,7 +16,7 @@ class _RotationTransitionPageState extends State<RotationTransitionPage> {
     return SimplePage(
         child: Column(children: [
       H1('這次我們改用 Rotation Transition'),
-      Bullet('看起來效果差不多，但用的是另外一套 API'),
+      Bullet('看起來效果差不多，但用的是 Flutter SDK 提供的 Widget'),
       SizedBox(height: 20),
       Container(
         height: 360,
@@ -24,41 +24,43 @@ class _RotationTransitionPageState extends State<RotationTransitionPage> {
           Expanded(flex: 1, child: Center(child: RotateAnimation(key: key))),
           Expanded(
               flex: 1,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ElevatedButton(
-                      onPressed: () => key.currentState.forward(),
-                      child: Text('Forward')),
-                  SizedBox(height: 10),
-                  ElevatedButton(
-                      onPressed: () => key.currentState.reverse(),
-                      child: Text('Reverse')),
-                  SizedBox(height: 10),
-                  ElevatedButton(
-                      onPressed: () => key.currentState.forwardFrom0(),
-                      child: Text('Forward from 0')),
-                  SizedBox(height: 10),
-                  ElevatedButton(
-                      onPressed: () => key.currentState.reverseFrom1(),
-                      child: Text('Reverse from 1')),
-                  SizedBox(height: 10),
-                  ElevatedButton(
-                      onPressed: () => key.currentState.repeat(),
-                      child: Text('Repeat')),
-                  SizedBox(height: 10),
-                  ElevatedButton(
-                      onPressed: () => key.currentState.repeatAndReverse(),
-                      child: Text('Repeat and Reverse')),
-                  SizedBox(height: 10),
-                  ElevatedButton(
-                      onPressed: () => key.currentState.animatedTo25(),
-                      child: Text('Animated to 0.25')),
-                  SizedBox(height: 10),
-                  ElevatedButton(
-                      onPressed: () => key.currentState.animatedTo75(),
-                      child: Text('Animated to 0.75')),
-                ],
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                        onPressed: () => key.currentState.forward(),
+                        child: Text('Forward')),
+                    SizedBox(height: 4),
+                    ElevatedButton(
+                        onPressed: () => key.currentState.reverse(),
+                        child: Text('Reverse')),
+                    SizedBox(height: 4),
+                    ElevatedButton(
+                        onPressed: () => key.currentState.forwardFrom0(),
+                        child: Text('Forward from 0')),
+                    SizedBox(height: 4),
+                    ElevatedButton(
+                        onPressed: () => key.currentState.reverseFrom1(),
+                        child: Text('Reverse from 1')),
+                    SizedBox(height: 4),
+                    ElevatedButton(
+                        onPressed: () => key.currentState.repeat(),
+                        child: Text('Repeat')),
+                    SizedBox(height: 4),
+                    ElevatedButton(
+                        onPressed: () => key.currentState.repeatAndReverse(),
+                        child: Text('Repeat and Reverse')),
+                    SizedBox(height: 4),
+                    ElevatedButton(
+                        onPressed: () => key.currentState.animatedTo25(),
+                        child: Text('Animated to 0.25')),
+                    SizedBox(height: 4),
+                    ElevatedButton(
+                        onPressed: () => key.currentState.animatedTo75(),
+                        child: Text('Animated to 0.75')),
+                  ],
+                ),
               ))
         ]),
       )

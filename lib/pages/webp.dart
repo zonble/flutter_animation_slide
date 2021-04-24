@@ -10,7 +10,7 @@ class Webp extends StatelessWidget {
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       H1('WebP Files'),
       Image.asset('images/animated-webp-supported.webp'),
-      SizedBox(height: 10),
+      SizedBox(height: 4),
       Text('https://mathiasbynens.be/demo/animated-webp'),
     ]));
   }

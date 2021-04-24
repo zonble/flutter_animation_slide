@@ -26,41 +26,43 @@ class _AnimatedWidgetPageState extends State<AnimatedWidgetPage> {
           Expanded(flex: 1, child: Center(child: RotateAnimation(key: key))),
           Expanded(
               flex: 1,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ElevatedButton(
-                      onPressed: () => key.currentState.forward(),
-                      child: Text('Forward')),
-                  SizedBox(height: 10),
-                  ElevatedButton(
-                      onPressed: () => key.currentState.reverse(),
-                      child: Text('Reverse')),
-                  SizedBox(height: 10),
-                  ElevatedButton(
-                      onPressed: () => key.currentState.forwardFrom0(),
-                      child: Text('Forward from 0')),
-                  SizedBox(height: 10),
-                  ElevatedButton(
-                      onPressed: () => key.currentState.reverseFrom1(),
-                      child: Text('Reverse from 1')),
-                  SizedBox(height: 10),
-                  ElevatedButton(
-                      onPressed: () => key.currentState.repeat(),
-                      child: Text('Repeat')),
-                  SizedBox(height: 10),
-                  ElevatedButton(
-                      onPressed: () => key.currentState.repeatAndReverse(),
-                      child: Text('Repeat and Reverse')),
-                  SizedBox(height: 10),
-                  ElevatedButton(
-                      onPressed: () => key.currentState.animatedTo25(),
-                      child: Text('Animated to 0.25')),
-                  SizedBox(height: 10),
-                  ElevatedButton(
-                      onPressed: () => key.currentState.animatedTo75(),
-                      child: Text('Animated to 0.75')),
-                ],
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                        onPressed: () => key.currentState.forward(),
+                        child: Text('Forward')),
+                    SizedBox(height: 4),
+                    ElevatedButton(
+                        onPressed: () => key.currentState.reverse(),
+                        child: Text('Reverse')),
+                    SizedBox(height: 4),
+                    ElevatedButton(
+                        onPressed: () => key.currentState.forwardFrom0(),
+                        child: Text('Forward from 0')),
+                    SizedBox(height: 4),
+                    ElevatedButton(
+                        onPressed: () => key.currentState.reverseFrom1(),
+                        child: Text('Reverse from 1')),
+                    SizedBox(height: 4),
+                    ElevatedButton(
+                        onPressed: () => key.currentState.repeat(),
+                        child: Text('Repeat')),
+                    SizedBox(height: 4),
+                    ElevatedButton(
+                        onPressed: () => key.currentState.repeatAndReverse(),
+                        child: Text('Repeat and Reverse')),
+                    SizedBox(height: 4),
+                    ElevatedButton(
+                        onPressed: () => key.currentState.animatedTo25(),
+                        child: Text('Animated to 0.25')),
+                    SizedBox(height: 4),
+                    ElevatedButton(
+                        onPressed: () => key.currentState.animatedTo75(),
+                        child: Text('Animated to 0.75')),
+                  ],
+                ),
               ))
         ]),
       )

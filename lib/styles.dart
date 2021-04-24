@@ -8,21 +8,19 @@ class H1 extends StatelessWidget {
   H1(this.text, {Key key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Semantics(
-      header: true,
-      child: Container(
-          width: double.infinity,
-          padding: EdgeInsets.only(top: 20, bottom: 20),
-          child: Text(this.text,
-              style: TextStyle(
-                fontSize: 46,
-                color: Color(0xFF00B4BE),
-                fontWeight: FontWeight.w200,
-                fontFamily: 'Helvetica Neue',
-              ))),
-    );
-  }
+  Widget build(BuildContext context) => Semantics(
+        header: true,
+        child: Container(
+            width: double.infinity,
+            padding: EdgeInsets.only(top: 10, bottom: 10),
+            child: Text(this.text,
+                style: TextStyle(
+                  fontSize: 46,
+                  color: Color(0xFF00B4BE),
+                  fontWeight: FontWeight.w200,
+                  fontFamily: 'Helvetica Neue',
+                ))),
+      );
 }
 
 class H2 extends StatelessWidget {
@@ -31,21 +29,19 @@ class H2 extends StatelessWidget {
   H2(this.text, {Key key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Semantics(
-      header: true,
-      child: Container(
-          width: double.infinity,
-          padding: EdgeInsets.only(top: 20, bottom: 20),
-          child: Text(this.text,
-              style: TextStyle(
-                fontSize: 36,
-                color: Color(0xFF00B4BE),
-                fontWeight: FontWeight.w200,
-                fontFamily: 'Helvetica Neue',
-              ))),
-    );
-  }
+  Widget build(BuildContext context) => Semantics(
+        header: true,
+        child: Container(
+            width: double.infinity,
+            padding: EdgeInsets.only(top: 10, bottom: 10),
+            child: Text(this.text,
+                style: TextStyle(
+                  fontSize: 36,
+                  color: Color(0xFF00B4BE),
+                  fontWeight: FontWeight.w200,
+                  fontFamily: 'Helvetica Neue',
+                ))),
+      );
 }
 
 class Bullet extends StatelessWidget {
@@ -77,7 +73,7 @@ class Bullet extends StatelessWidget {
   }
 
   Widget buildLink() => FlatButton(
-        padding: EdgeInsets.all(0),
+        padding: EdgeInsets.zero,
         onPressed: () => launch(this.link),
         child: buildText(color: Colors.cyan),
       );

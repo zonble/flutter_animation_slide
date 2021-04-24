@@ -49,7 +49,7 @@ class Gif extends StatelessWidget {
         ],
       ),
       Text('https://borrowers.pm330.tw'),
-      SizedBox(height: 10),
+      SizedBox(height: 4),
       Text('當 Flutter 遇到地下金融…'),
     ]));
   }

@@ -7,5 +7,8 @@ class SimplePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => SafeArea(
-      child: Padding(padding: const EdgeInsets.all(30.0), child: child));
+      child: Padding(
+          padding:
+              const EdgeInsets.only(top: 10.0, left: 10, right: 10, bottom: 30),
+          child: child));
 }
