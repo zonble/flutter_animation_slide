@@ -1,16 +1,5 @@
-# flutter_animations_slide
+# 在 Flutter 中製作動畫
 
-Flutter Animations
+這是一個用 Flutter 製作的投影片，網頁版位在 https://zonble.github.io/flutter_animation_slide/
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+請注意有一些動畫效果無法在網頁版呈現，請 clone 之後執行。
