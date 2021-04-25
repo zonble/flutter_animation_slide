@@ -5,12 +5,11 @@ import '../styles.dart';
 
 class Gif extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return SimplePage(
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      H1('GIF Files'),
-      Wrap(
-        children: [
+  Widget build(BuildContext context) => SimplePage(
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        H1('GIF Files'),
+        Wrap(children: [
           Container(
             width: 200,
             height: 200,
@@ -45,12 +44,10 @@ class Gif extends StatelessWidget {
             height: 200,
             padding: EdgeInsets.all(10),
             child: Image.asset('images/a317-239x200-logo.gif'),
-          ),
-        ],
-      ),
-      Text('https://borrowers.pm330.tw'),
-      SizedBox(height: 4),
-      Text('當 Flutter 遇到地下金融…'),
-    ]));
-  }
+          )
+        ]),
+        Text('https://borrowers.pm330.tw'),
+        SizedBox(height: 4),
+        Text('當 Flutter 遇到地下金融…'),
+      ]));
 }

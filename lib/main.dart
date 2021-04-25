@@ -18,6 +18,7 @@ import 'pages/concept.dart';
 import 'pages/cover.dart';
 import 'pages/explicit.dart';
 import 'pages/gif.dart';
+import 'pages/hero.dart';
 import 'pages/lottie.dart';
 import 'pages/recap.dart';
 import 'pages/rive.dart';
@@ -126,6 +127,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 RotationTransitionCodePage(),
                                 TweenAnimationWidgetPage(),
                                 ExplicitPage(),
+                                HeroPage(),
                                 Recap(),
                               ],
                             ),
