@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  const MyHomePage({super.key, required this.title});
   final String title;
 
   @override
@@ -59,24 +59,25 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
     _pageController.addListener(() {
-      var currentPage = _pageController.page.toInt() + 1;
+      var currentPage = _pageController.page?.toInt() ?? 0;
+      currentPage += 1;
       _page = currentPage;
-      _key.currentState.setPage(_page);
+      _key.currentState?.setPage(_page);
     });
   }
 
   void nextPage() {
     if (!_pageController.hasClients) return;
-    var page = (_pageController.page + 1).toInt();
+    var page = ((_pageController.page ?? 0) + 1).toInt();
     _pageController.animateToPage(page,
-        duration: Duration(milliseconds: 250), curve: Curves.easeInCubic);
+        duration: const Duration(milliseconds: 250), curve: Curves.easeInCubic);
   }
 
   void previousPage() {
     if (!_pageController.hasClients) return;
-    var page = max(0, (_pageController.page - 1).toInt());
+    var page = max(0, ((_pageController.page ?? 0) - 1).toInt());
     _pageController.animateToPage(page,
-        duration: Duration(milliseconds: 250), curve: Curves.easeInCubic);
+        duration: const Duration(milliseconds: 250), curve: Curves.easeInCubic);
   }
 
   @override
@@ -140,12 +141,12 @@ class _MyHomePageState extends State<MyHomePage> {
                                               MainAxisAlignment.center,
                                           children: <Widget>[
                                             IconButton(
-                                                icon: Icon(Icons.arrow_left,
+                                                icon: const Icon(Icons.arrow_left,
                                                     color: Colors.grey),
                                                 onPressed: previousPage),
                                             PageNumber(key: _key, page: _page),
                                             IconButton(
-                                                icon: Icon(Icons.arrow_right,
+                                                icon: const Icon(Icons.arrow_right,
                                                     color: Colors.grey),
                                                 onPressed: nextPage),
                                           ],
@@ -157,12 +158,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
 class PageNumber extends StatefulWidget {
   const PageNumber({
-    Key key,
-    @required int page,
-  })  : initialPage = page,
-        super(key: key);
+    super.key,
+    required this.page,
+  }) : initialPage = page;
 
   final int initialPage;
+  final int page;
 
   @override
   _PageNumberState createState() => _PageNumberState();
@@ -188,7 +189,7 @@ class _PageNumberState extends State<PageNumber> {
         child: Center(
             child: Text(
           'Page: $_page',
-          style: TextStyle(color: Colors.grey),
+          style: const TextStyle(color: Colors.grey),
         )));
   }
 }
