@@ -54,11 +54,20 @@ class CodeViewer extends StatelessWidget {
 
   Future<TextSpan?> _highlightCode() async {
     try {
+      // Initialize the highlighter
       await Highlighter.initialize(['dart']);
+      
+      // Load theme
+      final theme = lightTheme 
+          ? await HighlighterTheme.loadLightTheme()
+          : await HighlighterTheme.loadDarkTheme();
+      
+      // Create highlighter
       final highlighter = Highlighter(
         language: 'dart',
-        theme: lightTheme ? HighlighterTheme.githubLight : HighlighterTheme.githubDark,
+        theme: theme,
       );
+      
       return highlighter.highlight(code);
     } catch (e) {
       // Return null to fall back to plain text
