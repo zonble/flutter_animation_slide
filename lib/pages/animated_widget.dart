@@ -19,7 +19,7 @@ class _AnimatedWidgetPageState extends State<AnimatedWidgetPage> {
         child: Column(children: [
       H1('這次我們改用 Animation Widget'),
       Bullet('看起來效果差不多，但用的是另外一套 API'),
-      SizedBox(height: 20),
+      const SizedBox(height: 20),
       Container(
         height: 360,
         child: Row(children: [
@@ -31,36 +31,36 @@ class _AnimatedWidgetPageState extends State<AnimatedWidgetPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ElevatedButton(
-                        onPressed: () => key.currentState.forward(),
-                        child: Text('Forward')),
-                    SizedBox(height: 4),
+                        onPressed: () => key.currentState?.forward(),
+                        child: const Text('Forward')),
+                    const SizedBox(height: 4),
                     ElevatedButton(
-                        onPressed: () => key.currentState.reverse(),
-                        child: Text('Reverse')),
-                    SizedBox(height: 4),
+                        onPressed: () => key.currentState?.reverse(),
+                        child: const Text('Reverse')),
+                    const SizedBox(height: 4),
                     ElevatedButton(
-                        onPressed: () => key.currentState.forwardFrom0(),
-                        child: Text('Forward from 0')),
-                    SizedBox(height: 4),
+                        onPressed: () => key.currentState?.forwardFrom0(),
+                        child: const Text('Forward from 0')),
+                    const SizedBox(height: 4),
                     ElevatedButton(
-                        onPressed: () => key.currentState.reverseFrom1(),
-                        child: Text('Reverse from 1')),
-                    SizedBox(height: 4),
+                        onPressed: () => key.currentState?.reverseFrom1(),
+                        child: const Text('Reverse from 1')),
+                    const SizedBox(height: 4),
                     ElevatedButton(
-                        onPressed: () => key.currentState.repeat(),
-                        child: Text('Repeat')),
-                    SizedBox(height: 4),
+                        onPressed: () => key.currentState?.repeat(),
+                        child: const Text('Repeat')),
+                    const SizedBox(height: 4),
                     ElevatedButton(
-                        onPressed: () => key.currentState.repeatAndReverse(),
-                        child: Text('Repeat and Reverse')),
-                    SizedBox(height: 4),
+                        onPressed: () => key.currentState?.repeatAndReverse(),
+                        child: const Text('Repeat and Reverse')),
+                    const SizedBox(height: 4),
                     ElevatedButton(
-                        onPressed: () => key.currentState.animatedTo25(),
-                        child: Text('Animated to 0.25')),
-                    SizedBox(height: 4),
+                        onPressed: () => key.currentState?.animatedTo25(),
+                        child: const Text('Animated to 0.25')),
+                    const SizedBox(height: 4),
                     ElevatedButton(
-                        onPressed: () => key.currentState.animatedTo75(),
-                        child: Text('Animated to 0.75')),
+                        onPressed: () => key.currentState?.animatedTo75(),
+                        child: const Text('Animated to 0.75')),
                   ],
                 ),
               ))
@@ -71,7 +71,7 @@ class _AnimatedWidgetPageState extends State<AnimatedWidgetPage> {
 }
 
 class RotateAnimation extends StatefulWidget {
-  RotateAnimation({Key key}) : super(key: key);
+  const RotateAnimation({super.key});
 
   @override
   _RotateAnimationState createState() => _RotateAnimationState();
@@ -79,12 +79,12 @@ class RotateAnimation extends StatefulWidget {
 
 class _RotateAnimationState extends State<RotateAnimation>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+  late AnimationController _controller;
 
   @override
   void initState() {
     _controller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 500));
+        AnimationController(vsync: this, duration: const Duration(milliseconds: 500));
     super.initState();
   }
 
@@ -116,9 +116,9 @@ class _RotateAnimationState extends State<RotateAnimation>
 
 class Inner extends AnimatedWidget {
   const Inner({
-    Key key,
-    @required AnimationController controller,
-  }) : super(key: key, listenable: controller);
+    super.key,
+    required AnimationController controller,
+  }) : super(listenable: controller);
 
   Animation<double> get _progress => listenable as Animation<double>;
 
@@ -133,8 +133,8 @@ class Inner extends AnimatedWidget {
               height: 200,
               decoration: BoxDecoration(
                   border: Border.all(color: Colors.grey),
-                  borderRadius: BorderRadius.all(Radius.circular(100)),
-                  image: DecorationImage(
+                  borderRadius: const BorderRadius.all(Radius.circular(100)),
+                  image: const DecorationImage(
                       fit: BoxFit.cover, image: AssetImage('images/cat.jpg'))),
             ))));
   }
