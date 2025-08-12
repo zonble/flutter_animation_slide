@@ -1,6 +1,6 @@
-import 'package:dart_code_viewer/dart_code_viewer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animations_slide/page.dart';
+import 'package:flutter_animations_slide/widgets/code_viewer.dart';
 
 import '../styles.dart';
 
@@ -12,7 +12,7 @@ class AnimationCodeControllerPage extends StatelessWidget {
         children: [
           H1('先建立 Animation Controller'),
           Flexible(
-            child: DartCodeViewer.light(r'''
+            child: CodeViewer.light(r'''
 class _ScaleAnimationState extends State<ScaleAnimation>
             with SingleTickerProviderStateMixin {
   AnimationController _controller;
@@ -46,7 +46,7 @@ class AnimationCodeBuilderPage extends StatelessWidget {
         children: [
           H1('使用 AnimatedBuilder'),
           Flexible(
-            child: DartCodeViewer.light(r'''
+            child: CodeViewer.light(r'''
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
@@ -80,7 +80,7 @@ class AnimationCodeControllerMethodsPage extends StatelessWidget {
         children: [
           H1('操作 Animation Controller'),
           Flexible(
-            child: DartCodeViewer.light(r'''
+            child: CodeViewer.light(r'''
   forward() => _controller.forward();
 
   forwardFrom0() => _controller.forward(from: 0);
