@@ -15,7 +15,7 @@ class AnimationWidgetCodePage extends StatelessWidget {
             child: DartCodeViewer.light(r'''
 class _RotateAnimationState extends State<RotateAnimation>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+  late AnimationController _controller;
 
   @override
   void initState() {
@@ -52,9 +52,9 @@ class AnimationWidgetCodeInnerPage extends StatelessWidget {
             child: DartCodeViewer.light(r'''
 class Inner extends AnimatedWidget {
   const Inner({
-    Key key,
-    @required AnimationController controller,
-  }) : super(key: key, listenable: controller);
+    super.key,
+    required AnimationController controller,
+  }) : super(listenable: controller);
 
   Animation<double> get _progress => listenable as Animation<double>;
 

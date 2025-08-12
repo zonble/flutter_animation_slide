@@ -5,16 +5,16 @@ import 'package:url_launcher/url_launcher.dart';
 class H1 extends StatelessWidget {
   final String text;
 
-  H1(this.text, {Key key}) : super(key: key);
+  const H1(this.text, {super.key});
 
   @override
   Widget build(BuildContext context) => Semantics(
         header: true,
         child: Container(
             width: double.infinity,
-            padding: EdgeInsets.only(top: 10, bottom: 10),
-            child: Text(this.text,
-                style: TextStyle(
+            padding: const EdgeInsets.only(top: 10, bottom: 10),
+            child: Text(text,
+                style: const TextStyle(
                   fontSize: 46,
                   color: Color(0xFF00B4BE),
                   fontWeight: FontWeight.w200,
@@ -26,16 +26,16 @@ class H1 extends StatelessWidget {
 class H2 extends StatelessWidget {
   final String text;
 
-  H2(this.text, {Key key}) : super(key: key);
+  const H2(this.text, {super.key});
 
   @override
   Widget build(BuildContext context) => Semantics(
         header: true,
         child: Container(
             width: double.infinity,
-            padding: EdgeInsets.only(top: 10, bottom: 10),
-            child: Text(this.text,
-                style: TextStyle(
+            padding: const EdgeInsets.only(top: 10, bottom: 10),
+            child: Text(text,
+                style: const TextStyle(
                   fontSize: 36,
                   color: Color(0xFF00B4BE),
                   fontWeight: FontWeight.w200,
@@ -47,22 +47,22 @@ class H2 extends StatelessWidget {
 class Bullet extends StatelessWidget {
   final String text;
   final int level;
-  final String link;
+  final String? link;
 
-  Bullet(this.text, {this.level = 0, this.link, Key key}) : super(key: key);
+  const Bullet(this.text, {this.level = 0, this.link, super.key});
 
   @override
   Widget build(BuildContext context) {
     return Semantics(
       header: true,
       child: Container(
-          padding: EdgeInsets.only(bottom: 6),
+          padding: const EdgeInsets.only(bottom: 6),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Padding(
                 padding: EdgeInsets.only(left: 12.0 + level * 30, right: 12.0),
-                child: Text('-', style: TextStyle(fontSize: 26)),
+                child: const Text('-', style: TextStyle(fontSize: 26)),
               ),
               Flexible(
                 child: link != null ? buildLink() : buildText(),
@@ -72,13 +72,12 @@ class Bullet extends StatelessWidget {
     );
   }
 
-  Widget buildLink() => FlatButton(
-        padding: EdgeInsets.zero,
-        onPressed: () => launch(this.link),
+  Widget buildLink() => TextButton(
+        onPressed: () => launchUrl(Uri.parse(link!)),
         child: buildText(color: Colors.cyan),
       );
 
-  Widget buildText({Color color}) => Text(this.text,
+  Widget buildText({Color? color}) => Text(text,
       style: TextStyle(
           fontSize: 26,
           fontFamily: 'Helvetica Neue',

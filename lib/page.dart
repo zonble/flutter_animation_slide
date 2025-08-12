@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class SimplePage extends StatelessWidget {
   final Widget child;
 
-  SimplePage({Key key, this.child}) : super(key: key);
+  const SimplePage({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) => SafeArea(
