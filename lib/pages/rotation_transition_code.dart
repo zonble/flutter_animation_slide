@@ -1,5 +1,5 @@
-import 'package:dart_code_viewer/dart_code_viewer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animations_slide/widgets/code_viewer.dart';
 
 import '../page.dart';
 import '../styles.dart';
@@ -12,7 +12,7 @@ class RotationTransitionCodePage extends StatelessWidget {
         children: [
           H1('改用 RotationTransition 實作'),
           Flexible(
-            child: DartCodeViewer.light(r'''
+            child: CodeViewer.light(r'''
   @override
   Widget build(BuildContext context) {
     return Center(

@@ -1,5 +1,5 @@
-import 'package:dart_code_viewer/dart_code_viewer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animations_slide/widgets/code_viewer.dart';
 
 import '../page.dart';
 import '../styles.dart';
@@ -12,7 +12,7 @@ class AnimationWidgetCodePage extends StatelessWidget {
         children: [
           H1('build() 中，我們建立了一個新的 Class，叫做 Inner'),
           Flexible(
-            child: DartCodeViewer.light(r'''
+            child: CodeViewer.light(r'''
 class _RotateAnimationState extends State<RotateAnimation>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
@@ -49,7 +49,7 @@ class AnimationWidgetCodeInnerPage extends StatelessWidget {
         children: [
           H1('Inner 的實作'),
           Flexible(
-            child: DartCodeViewer.light(r'''
+            child: CodeViewer.light(r'''
 class Inner extends AnimatedWidget {
   const Inner({
     super.key,
